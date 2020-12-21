@@ -23,7 +23,6 @@ sudo echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg m
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update -y
 sudo apt install postgresql-9.4 -y
-sudo service postgresql restart
 
 # Instalar Software adicional
 echo "---------- INSTALANDO SOFTWARE ADICIONAL ----------"
@@ -59,3 +58,4 @@ sudo -u postgres psql -c "GRANT CONNECT ON DATABASE moodle TO moodleuser;"
 sudo -u postgres psql -c "GRANT USAGE ON SCHEMA public TO moodleuser;"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO moodleuser;"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO moodleuser;"
+sudo service postgresql restart

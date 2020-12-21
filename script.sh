@@ -46,7 +46,6 @@ sudo cp -R /opt/moodle/ /var/www/html/
 sudo mkdir /var/moodledata
 sudo chown -R www-data /var/moodledata/
 sudo chmod -R 777 /var/moodledata/
-sudo chmod -R 0755 /var/www/html/moodle/
 sudo chmod -R 777 /var/www/html/moodle
 
 # Creando usuario y base de datos

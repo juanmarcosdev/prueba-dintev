@@ -11,13 +11,10 @@ sudo apt install software-properties-common wget curl git net-tools -y
 
 echo "---------- INSTALANDO APACHE2 VERSION 2.4 ----------"
 sudo apt install apache2 -y
-sudo service apache2 restart
 # Instalar PHP
 
 echo "---------- INSTALANDO PHP VERSION 7.2 ----------"
-sudo add-apt-repository ppa:ondrej/php -y
-sudo apt update -y
-sudo apt install php7.2 php7.2-mysql php7.2-intl php7.2-curl php7.2-xml php7.2-gd libapache2-mod-php -y
+sudo apt install php libapache2-mod-php
 
 # Instalar Postgres
 
@@ -27,6 +24,14 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 sudo apt update -y
 sudo apt install postgresql-9.4 -y
 sudo service postgresql restart
+
+# Instalar Software adicional
+echo "---------- INSTALANDO SOFTWARE ADICIONAL ----------"
+sudo apt install graphviz aspell ghostscript clamav php7.2-pspell php7.2-curl php7.2-gd php7.2-intl php7.2-mysql php7.2-xml php7.2-xmlrpc php7.2-ldap php7.2-zip php7.2-soap php7.2-mbstring
+
+# Reiniciar servicio de Apache así se cargan correctamente los modulos
+echo "---------- REINICIANDO APACHE2 ----------"
+sudo service apache2 restart
 
 # Verificar versiones de todo
 

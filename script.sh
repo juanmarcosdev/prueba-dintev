@@ -3,8 +3,6 @@
 # Instalar paquetes que son usados en la instalación
 
 echo "---------- INSTALANDO PAQUETES UTILES EN INSTALACION ----------"
-sudo apt update -y
-sudo apt upgrade -y
 sudo apt install software-properties-common wget curl git net-tools -y
 
 # Instalar Apache
@@ -14,7 +12,7 @@ sudo apt install apache2 -y
 # Instalar PHP
 
 echo "---------- INSTALANDO PHP VERSION 7.2 ----------"
-sudo apt install php libapache2-mod-php
+sudo apt install php libapache2-mod-php -y
 
 # Instalar Postgres
 
@@ -26,7 +24,7 @@ sudo apt install postgresql-9.4 -y
 
 # Instalar Software adicional
 echo "---------- INSTALANDO SOFTWARE ADICIONAL ----------"
-sudo apt install graphviz aspell ghostscript clamav php7.2-pspell php7.2-curl php7.2-gd php7.2-intl php7.2-mysql php7.2-xml php7.2-xmlrpc php7.2-ldap php7.2-zip php7.2-soap php7.2-mbstring
+sudo apt install graphviz aspell ghostscript clamav php7.2-pspell php7.2-curl php7.2-gd php7.2-intl php7.2-pgsql php7.2-xml php7.2-xmlrpc php7.2-ldap php7.2-zip php7.2-soap php7.2-mbstring php7.2-common -y
 
 # Reiniciar servicio de Apache así se cargan correctamente los modulos
 echo "---------- REINICIANDO APACHE2 ----------"
@@ -58,4 +56,8 @@ sudo -u postgres psql -c "GRANT CONNECT ON DATABASE moodle TO moodleuser;"
 sudo -u postgres psql -c "GRANT USAGE ON SCHEMA public TO moodleuser;"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO moodleuser;"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO moodleuser;"
+
+# Reinicio de servicios apache y postgres
+echo "---------- REINICIO DE SERVICIOS APACHE Y POSTGRES ----------"
+sudo service apache2 restart
 sudo service postgresql restart

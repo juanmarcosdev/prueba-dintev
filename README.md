@@ -1,5 +1,5 @@
 <h1>TL;DR for this repo:</h1>
-<img src="https://pbs.twimg.com/profile_images/552855175501606912/ar7KZTYN_400x400.jpeg" height="100" width="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png" height="100" width="100">
 <ul>
   <li><h4>Programming Language used:</h4>Shell (but the config files were made for configuring PHP and some other things)</li>
   <li><h4>Approximate date:</h4>Second semester of 2020</li>
